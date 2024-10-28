@@ -2,6 +2,8 @@ services:
   notifications-db:
     image: postgres:17-alpine
     restart: always
+    ports:
+      - 5432:5432
     volumes:
       - notifications-db-volume:/var/lib/postgresql/data
     environment:
