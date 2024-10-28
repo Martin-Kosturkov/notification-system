@@ -23,13 +23,13 @@ public class EmailNotificationEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "template")
+    @Column
     private String template;
 
-    @Column(name = "payload")
+    @Column
     @JdbcTypeCode(SqlTypes.JSON)
     private Map<String, Object> payload;
 
-    @Column(name = "recipient_id")
+    @Column
     private Integer recipientId;
 }
