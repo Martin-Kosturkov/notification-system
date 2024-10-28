@@ -13,6 +13,7 @@ public class SimpleEmailNotificationRequest implements EmailNotificationData {
     private static final String TEMPLATE_NAME = "simple";
 
     @NotBlank(message = "message cannot be empty")
+    @Size(max = 2000, message = "message size cannot be bigger than 2000 characters")
     private String message;
 
     @NotEmpty(message = "recipientIds cannot be empty")
