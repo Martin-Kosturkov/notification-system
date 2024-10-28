@@ -1,0 +1,13 @@
+services:
+  notifications-db:
+    image: postgres:17-alpine
+    restart: always
+    volumes:
+      - notifications-db-volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: notifications
+
+volumes:
+  notifications-db-volume:
