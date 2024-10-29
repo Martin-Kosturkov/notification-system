@@ -5,5 +5,3 @@ create table slack(
     channel_name varchar(60) not null,
     inserted_at timestamp not null default now()
 );
-
-create index ix_slack_inserted_at on slack (inserted_at);
