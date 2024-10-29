@@ -15,6 +15,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>notification-common</module>
         <module>notification-processor</module>
     </modules>
 
