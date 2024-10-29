@@ -36,6 +36,7 @@ public class EmailNotificationScheduler {
 
                     CompletableFuture.runAsync(() -> {
                         var notificationEvent = new EmailNotificationEvent(
+                                emailNotification.getId(),
                                 emailNotification.getTemplate(),
                                 emailNotification.getPayload(),
                                 emailNotification.getRecipientId());
