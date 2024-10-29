@@ -33,7 +33,7 @@ public class EmailNotificationConsumer {
         var emailNotification = deserialize(event);
 
         try {
-            EmailNotificationService.collectDataAndSendEmail(emailNotification);
+            emailNotificationService.processAndSendEmail(emailNotification);
         } catch (Exception e) {
             log.error("Error processing email event with id {}, will be retried",
                     emailNotification.getEventId(), e);

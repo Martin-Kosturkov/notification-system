@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailNotificationService {
 
-    public static void collectDataAndSendEmail(EmailNotificationEvent emailNotification) {
+    public void processAndSendEmail(EmailNotificationEvent emailNotification) {
     }
 }

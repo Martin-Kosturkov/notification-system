@@ -18,6 +18,7 @@
         <module>notification-common</module>
         <module>notification-processor</module>
         <module>notification-sender</module>
+        <module>org-metadata</module>
     </modules>
 
     <properties>
