@@ -18,7 +18,7 @@ public class EmailNotificationKafkaProducer {
     public EmailNotificationKafkaProducer(
             KafkaTemplate<String, String> kafkaTemplate,
             ObjectMapper objectMapper,
-            @Value("${kafka.topics.email-notifications}") String topicName) {
+            @Value("${kafka.topics.email-notifications.name}") String topicName) {
 
         this.kafkaTemplate = kafkaTemplate;
         this.objectMapper = objectMapper;
