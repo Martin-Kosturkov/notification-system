@@ -18,6 +18,12 @@ spring:
 # Custom
 kafka:
   topics:
-    email-notifications: email-notifications
-    sms-notifications: sms-notifications
-    slack-notifications: slack-notifications
+    email-notifications:
+      name: email-notifications
+      partitions: 5
+    sms-notifications:
+      name: sms-notifications
+      partitions: 5
+    slack-notifications:
+      name: slack-notifications
+      partitions: 5
