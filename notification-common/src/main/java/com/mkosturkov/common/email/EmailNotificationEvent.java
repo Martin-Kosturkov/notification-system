@@ -15,7 +15,7 @@ import java.util.Map;
 @ToString
 public class EmailNotificationEvent {
     private Long eventId;
-    private EmailTemplate template;
+    private EmailTemplateType template;
     private Map<String, Object> payload;
     private Integer recipientId;
 }

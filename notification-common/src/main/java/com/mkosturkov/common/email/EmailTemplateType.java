@@ -1,5 +1,5 @@
 package com.mkosturkov.common.email;
 
-public enum EmailTemplate {
+public enum EmailTemplateType {
     SIMPLE
 }
