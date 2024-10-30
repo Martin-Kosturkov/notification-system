@@ -1,19 +1,17 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/notifications
-    username: postgres
-    password: postgres
+    url: ${DB_URL:`jdbc:postgresql://localhost:5432/notifications`}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
   flyway:
-    url: jdbc:postgresql://localhost:5432/notifications
-    user: postgres
-    password: postgres
+    url: ${DB_URL:`jdbc:postgresql://localhost:5432/notifications`}
+    user: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
   kafka:
-    bootstrap-servers: localhost:29092
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVER:`localhost:29092`}
     producer:
       acks: all
-      properties:
-        enable.idempotence: true
 
 # Custom
 kafka:

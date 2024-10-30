@@ -28,6 +28,12 @@ services:
       KAFKA_CLUSTERS_0_NAME: local
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka_broker_controller:9092
 
+  org-metadata-mock-app:
+    image: org-metadata-mock-app
+    build: org-metadata
+    ports:
+      - 8083:8080
+
   notifications-db:
     image: postgres:17-alpine
     restart: always
@@ -39,12 +45,17 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: notifications
-
-  org-metadata-mock-app:
-    image: org-metadata-mock-app
-    build: org-metadata
+  notification-processor:
+    image: notification-processor
+    build: notification-processor
     ports:
-      - 8083:8080
+      - 8080:8080
+    environment:
+      DB_URL: "jdbc:postgresql://notifications-db:5432/notifications"
+      KAFKA_BOOTSTRAP_SERVER: "kafka_broker_controller:9092"
+    depends_on:
+      - notifications-db
+      - kafka_broker_controller
 
 volumes:
   notifications-db-volume:
