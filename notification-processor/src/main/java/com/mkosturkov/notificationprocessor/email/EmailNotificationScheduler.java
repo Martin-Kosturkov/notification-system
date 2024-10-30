@@ -1,6 +1,7 @@
 package com.mkosturkov.notificationprocessor.email;
 
-import com.mkosturkov.common.EmailNotificationEvent;
+import com.mkosturkov.common.email.EmailNotificationEvent;
+import com.mkosturkov.common.email.EmailTemplate;
 import com.mkosturkov.notificationprocessor.email.dao.EmailNotificationRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -37,7 +38,7 @@ public class EmailNotificationScheduler {
                     CompletableFuture.runAsync(() -> {
                         var notificationEvent = new EmailNotificationEvent(
                                 emailNotification.getId(),
-                                emailNotification.getTemplate(),
+                                EmailTemplate.valueOf(emailNotification.getTemplate()),
                                 emailNotification.getPayload(),
                                 emailNotification.getRecipientId());
 

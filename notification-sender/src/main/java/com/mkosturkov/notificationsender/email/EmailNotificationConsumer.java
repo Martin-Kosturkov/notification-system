@@ -1,7 +1,7 @@
 package com.mkosturkov.notificationsender.email;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mkosturkov.common.EmailNotificationEvent;
+import com.mkosturkov.common.email.EmailNotificationEvent;
 import com.mkosturkov.notificationsender.common.exception.RetryableEventException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -35,8 +35,7 @@ public class EmailNotificationConsumer {
         try {
             emailNotificationService.processAndSendEmail(emailNotification);
         } catch (Exception e) {
-            log.error("Error processing email event with id {}, will be retried",
-                    emailNotification.getEventId(), e);
+            log.error("Error processing email event with id {}", emailNotification.getEventId(), e);
             throw new RetryableEventException();
         }
     }

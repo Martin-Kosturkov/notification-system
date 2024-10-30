@@ -1,4 +1,4 @@
-package com.mkosturkov.common;
+package com.mkosturkov.common.email;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +15,7 @@ import java.util.Map;
 @ToString
 public class EmailNotificationEvent {
     private Long eventId;
-    private String template;
+    private EmailTemplate template;
     private Map<String, Object> payload;
     private Integer recipientId;
 }

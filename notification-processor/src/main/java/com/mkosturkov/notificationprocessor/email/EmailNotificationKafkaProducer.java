@@ -1,7 +1,7 @@
 package com.mkosturkov.notificationprocessor.email;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mkosturkov.common.EmailNotificationEvent;
+import com.mkosturkov.common.email.EmailNotificationEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
