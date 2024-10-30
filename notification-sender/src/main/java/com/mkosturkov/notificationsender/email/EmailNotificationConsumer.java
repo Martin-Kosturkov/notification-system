@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class EmailNotificationConsumer {
 
-    private EmailNotificationService emailNotificationService;
+    private final EmailNotificationService emailNotificationService;
     private final ObjectMapper objectMapper;
 
     @RetryableTopic(
