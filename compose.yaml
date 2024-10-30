@@ -40,5 +40,11 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: notifications
 
+  org-metadata-mock-app:
+    image: org-metadata-mock-app
+    build: org-metadata
+    ports:
+      - 8083:8080
+
 volumes:
   notifications-db-volume:
