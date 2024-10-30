@@ -20,4 +20,4 @@ kafka:
       partitions: 5
 
 org-metadata:
-  base-url: ${ORG_METADATA_BASE_URL:`http://localhost:8083`}
+  base-url: ${ORG_METADATA_BASE_URL:http://localhost:8083}
