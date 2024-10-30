@@ -32,7 +32,7 @@ public class EmailNotificationScheduler {
 
     @Scheduled(fixedDelay = 5, timeUnit = TimeUnit.SECONDS)
     public void sendNotificationsToKafka() {
-        repository.findFirst20000ByOrderById()
+        repository.findFirst10000ByOrderById()
                 .forEach(emailNotification ->
 
                     CompletableFuture.runAsync(() -> {

@@ -12,7 +12,7 @@ public class TaskExecutorConfig {
     public TaskExecutor emailNotificationExecutor() {
         var taskExecutor = new ThreadPoolTaskExecutor();
         taskExecutor.setCorePoolSize(10);
-        taskExecutor.setMaxPoolSize(30);
+        taskExecutor.setMaxPoolSize(20);
         return taskExecutor;
     }
 }

@@ -17,6 +17,6 @@ public class SmsNotificationRequest {
     private String message;
 
     @NotEmpty(message = "recipientIds cannot be empty")
-    @Size(max = 5000, message = "recipientIds cannot be more than 5000")
+    @Size(max = 1000, message = "recipientIds cannot be more than 1000")
     private Set<Integer> recipientIds;
 }

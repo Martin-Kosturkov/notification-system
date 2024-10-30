@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface EmailNotificationRepository extends CrudRepository<EmailNotificationEntity, Long> {
 
-    List<EmailNotificationEntity> findFirst20000ByOrderById();
+    List<EmailNotificationEntity> findFirst10000ByOrderById();
 }
